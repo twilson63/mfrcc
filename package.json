@@ -28,10 +28,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twilson63/funfp.git"
+    "url": "git+https://github.com/twilson63/mfrcc.git"
   },
   "bugs": {
-    "url": "https://github.com/twilson63/funfp/issues"
+    "url": "https://github.com/twilson63/mfrcc/issues"
   },
-  "homepage": "https://github.com/twilson63/funfp#readme"
+  "homepage": "https://github.com/twilson63/mfrcc#readme"
 }
