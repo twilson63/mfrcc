@@ -4,14 +4,6 @@
   (factory((global.funfp = {})));
 }(this, (function (exports) { 'use strict';
 
-  function _not(v) {
-    return !v;
-  }
-
-  function _equals(a, b) {
-    return a === b;
-  }
-
   /**
    * curryN
    *
@@ -26,9 +18,13 @@
       throw new Error('number of arguments is required for first parameter');
     }
 
-    let previousArgs = [];
+    var previousArgs = [];
 
-    function callback(...args) {
+    function callback() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
       if (equals(add(previousArgs.length, args.length), n)) {
         return fn.apply(null, previousArgs.concat(args));
       } else {
@@ -62,10 +58,6 @@
    */
 
   function map(fn, list) {
-    if (_not(_equals(typeof fn, 'function'))) {
-      throw new Error('MAP ERROR: 1st argument should be function');
-    }
-
     return list.map(fn);
   }
 
@@ -81,10 +73,6 @@
    */
 
   function filter(fn, list) {
-    if (_not(_equals(typeof fn, 'function'))) {
-      throw new Error('FILTER ERROR: 1st argument should be function');
-    }
-
     return list.filter(fn);
   }
 
@@ -100,10 +88,6 @@
    */
 
   function reduce(fn, value, list) {
-    if (_not(_equals(typeof fn, 'function'))) {
-      throw new Error('REDUCE ERROR: 1st argument should be function');
-    }
-
     return list.reduce(fn, value);
   }
 
@@ -119,7 +103,11 @@
    * which then passes its result down the line.
    *
    */
-  function compose(...fns) {
+  function compose() {
+    for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+      fns[_key] = arguments[_key];
+    }
+
     return function (value) {
       return fns.reverse().reduce(function (acc, fn) {
         return fn(acc);

@@ -1,5 +1,5 @@
-const test = require('tape')
-const reduce = require('../src/reduce')
+import test from 'tape'
+import reduce from '../src/reduce'
 
 test('sum basic reduce test', function(t) {
   function add(a, b) {

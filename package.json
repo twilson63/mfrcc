@@ -1,7 +1,7 @@
 {
   "name": "funfp",
   "version": "1.0.0",
-  "description": "",
+  "description": "a little functional library",
   "main": "dist/funfp.cjs.js",
   "module": "dist/funfp.esm.js",
   "browser": "dist/funfp.umd.js",
@@ -10,19 +10,28 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "tape test"
+    "test": "babel-tape-runner test/*_test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.0",
-    "babel-preset-env": "^1.6.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-tape-runner": "^3.0.0",
     "rollup": "^0.66.1",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "tape": "^4.9.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twilson63/funfp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twilson63/funfp/issues"
+  },
+  "homepage": "https://github.com/twilson63/funfp#readme"
 }

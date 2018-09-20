@@ -1,5 +1,5 @@
-const test = require('tape')
-const map = require('../src/map')
+import test from 'tape'
+import map from '../src/map'
 
 test('basic map example', function(t) {
   const results = map(inc, [1, 2, 3])
@@ -25,7 +25,7 @@ test('throw error if no mapper function', function(t) {
   try {
     const results = map('Beep', [1, 2, 3])
   } catch (err) {
-    t.equals(err.message, 'MAP ERROR: 1st argument should be function')
+    t.equals(err.message, 'Beep is not a function')
   }
   t.end()
 })

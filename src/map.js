@@ -1,5 +1,3 @@
-import not from './_not'
-import equals from './_equals'
 import curryN from './_curry'
 /**
  * map
@@ -14,9 +12,6 @@ import curryN from './_curry'
  *
  */
 function map(fn, list) {
-  if (not(equals(typeof fn, 'function'))) {
-    throw new Error('MAP ERROR: 1st argument should be function')
-  }
   return list.map(fn)
 }
 

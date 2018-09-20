@@ -1,5 +1,5 @@
-const test = require('tape')
-const filter = require('../src/filter')
+import test from 'tape'
+import filter from '../src/filter'
 
 test('only even numbers', function(t) {
   function even(v) {

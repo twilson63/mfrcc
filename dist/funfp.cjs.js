@@ -2,14 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _not(v) {
-  return !v;
-}
-
-function _equals(a, b) {
-  return a === b;
-}
-
 /**
  * curryN
  *
@@ -24,9 +16,13 @@ function curryN(n, fn) {
     throw new Error('number of arguments is required for first parameter');
   }
 
-  let previousArgs = [];
+  var previousArgs = [];
 
-  function callback(...args) {
+  function callback() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
     if (equals(add(previousArgs.length, args.length), n)) {
       return fn.apply(null, previousArgs.concat(args));
     } else {
@@ -60,10 +56,6 @@ function add(a, b) {
  */
 
 function map(fn, list) {
-  if (_not(_equals(typeof fn, 'function'))) {
-    throw new Error('MAP ERROR: 1st argument should be function');
-  }
-
   return list.map(fn);
 }
 
@@ -79,10 +71,6 @@ var map$1 = curryN(2, map);
  */
 
 function filter(fn, list) {
-  if (_not(_equals(typeof fn, 'function'))) {
-    throw new Error('FILTER ERROR: 1st argument should be function');
-  }
-
   return list.filter(fn);
 }
 
@@ -98,10 +86,6 @@ var filter$1 = curryN(2, filter);
  */
 
 function reduce(fn, value, list) {
-  if (_not(_equals(typeof fn, 'function'))) {
-    throw new Error('REDUCE ERROR: 1st argument should be function');
-  }
-
   return list.reduce(fn, value);
 }
 
@@ -117,7 +101,11 @@ var reduce$1 = curryN(3, reduce);
  * which then passes its result down the line.
  *
  */
-function compose(...fns) {
+function compose() {
+  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
+  }
+
   return function (value) {
     return fns.reverse().reduce(function (acc, fn) {
       return fn(acc);

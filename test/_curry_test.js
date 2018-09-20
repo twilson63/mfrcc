@@ -1,5 +1,5 @@
-const test = require('tape')
-const curryN = require('../src/_curry')
+import test from 'tape'
+import curryN from '../src/_curry'
 
 test('basic curry test', function(t) {
   const add = curryN(2, function(a, b) {
