@@ -1,4 +1,4 @@
-# funfp
+# mfrcc
 
 a little functional library
 

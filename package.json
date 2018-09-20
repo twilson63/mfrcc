@@ -1,10 +1,10 @@
 {
-  "name": "funfp",
+  "name": "mfrcc",
   "version": "1.0.0",
   "description": "a little functional library",
-  "main": "dist/funfp.cjs.js",
-  "module": "dist/funfp.esm.js",
-  "browser": "dist/funfp.umd.js",
+  "main": "dist/mfrcc.cjs.js",
+  "module": "dist/mfrcc.esm.js",
+  "browser": "dist/mfrcc.umd.js",
   "directories": {
     "test": "test"
   },

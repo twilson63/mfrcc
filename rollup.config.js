@@ -8,7 +8,7 @@ export default [
   {
     input: 'src/index.js',
     output: {
-      name: 'funfp',
+      name: 'mfrcc',
       file: pkg.browser,
       format: 'umd'
     },
