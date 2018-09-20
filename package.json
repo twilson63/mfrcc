@@ -1,6 +1,6 @@
 {
   "name": "mfrcc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a little functional library",
   "main": "dist/mfrcc.cjs.js",
   "module": "dist/mfrcc.esm.js",
